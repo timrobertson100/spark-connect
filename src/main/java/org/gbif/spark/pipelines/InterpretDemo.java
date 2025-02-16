@@ -21,7 +21,7 @@ import java.util.UUID;
 
 import org.apache.spark.sql.*;
 
-public class Test implements Serializable {
+public class InterpretDemo implements Serializable {
 
   public static void main(String[] args) throws IOException, AnalysisException {
     SparkSession spark = SparkSession.builder().remote("sc://localhost").getOrCreate();

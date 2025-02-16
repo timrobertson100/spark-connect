@@ -64,4 +64,8 @@ public class Taxonomy {
       return null;
     }
   }
+
+  public static void main(String[] args) {
+    System.out.println(Taxonomy.getInstance().match("Puma comcolr"));
+  }
 }
