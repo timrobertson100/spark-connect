@@ -26,8 +26,6 @@ public class DownloadDemo implements Serializable {
 
   public static void main(String[] args) throws IOException, AnalysisException {
     SparkSession spark = SparkSession.builder().remote("sc://localhost").getOrCreate();
-    spark.addArtifact(
-        "/Users/tsj442/dev/git/timrobertson100/spark-connect/target/connect-demo-1.0.0-3.5.4.jar");
 
     boolean createTable = true;
 
@@ -41,9 +39,10 @@ public class DownloadDemo implements Serializable {
     }
 
     spark
-        .sql("SELECT /*+ REBALANCE */ * FROM global_temp.occurrence_svampe WHERE scientificname like 'C%'")
+        .sql(
+            "SELECT /*+ REBALANCE */ * FROM global_temp.occurrence_svampe WHERE scientificname like 'A%'")
         .write()
-        .parquet("/tmp/download-" + UUID.randomUUID());
+        .csv("/tmp/download-" + UUID.randomUUID());
     spark.close();
   }
 }
