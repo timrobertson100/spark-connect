@@ -32,13 +32,13 @@ Or, just use one created earlier here https://download.gbif.org/tim/svampeatlas/
 Download and start a Spark cluster:
 
 ```
-wget https://dlcdn.apache.org/spark/spark-3.5.4/spark-3.5.4-bin-hadoop3.tgz        
-tar -xvf spark-3.5.4-bin-hadoop3.tgz
-cd spark-3.5.4-bin-hadoop3
+wget https://dlcdn.apache.org/spark/spark-3.5.5/spark-3.5.5-bin-hadoop3.tgz        
+tar -xvf spark-3.5.5-bin-hadoop3.tgz
+cd spark-3.5.5-bin-hadoop3
 export SPARK_LOCAL_IP="127.0.0.1"
 export JAVA_HOME="/usr/libexec/java_home -v 17"
 export SPARK_DAEMON_MEMORY="4G"
-./sbin/start-connect-server.sh --packages org.apache.spark:spark-connect_2.12:3.5.4
+./sbin/start-connect-server.sh --packages org.apache.spark:spark-connect_2.12:3.5.5
 ```
 
 ### Build and run the code on the cluster
